@@ -1,5 +1,5 @@
 - [Introduction](#introduction)
-- [Tings To Do After Linux Install](#tings-to-do-after-linux-install)
+- [Tings To Do Post Linux Install](#tings-to-do-post-linux-install)
   - [System Update/Upgrade](#system-updateupgrade)
   - [Customizations](#customizations)
     - [Gnome Tweak Tool](#gnome-tweak-tool)
@@ -7,6 +7,7 @@
     - [Fusuma (multi-touch gestures)](#fusuma-multi-touch-gestures)
   - [Dev Tools](#dev-tools)
     - [Sublime](#sublime)
+    - [VIM](#vim)
     - [VS Code](#vs-code)
     - [LAMP Stack](#lamp-stack)
       - [Maria DB](#maria-db)
@@ -26,12 +27,23 @@
     - [Steam](#steam)
     - [Lutris](#lutris)
     - [Vulkan](#vulkan)
+  - [Other Packages and Applications](#other-packages-and-applications)
+    - [Spotify](#spotify)
+    - [VLC Media Player](#vlc-media-player)
+    - [QBittorrent](#qbittorrent)
+    - [GIMP](#gimp)
+    - [Krita](#krita)
+    - [Inkscape](#inkscape)
+    - [Telegram](#telegram)
+    - [Snap](#snap)
+    - [Flatpak](#flatpak)
+    - [Simplenote](#simplenote)
 
 # Introduction
 
 List of command and things to do after a fresh install of debian/ubuntu based linux. These configurations and packages are based on my requirements.
 
-# Tings To Do After Linux Install
+# Tings To Do Post Linux Install
 
 ## System Update/Upgrade
 
@@ -101,8 +113,9 @@ and paste the contents of [config.yml](config.yml)
 
 sources:
 
-<https://github.com/iberianpig/fusuma/blob/master/README.md>
-<https://askubuntu.com/questions/1034624/touchpad-gestures-in-ubuntu-18-04-lts>
+- <https://github.com/iberianpig/fusuma/blob/master/README.md>
+
+- <https://askubuntu.com/questions/1034624/touchpad-gestures-in-ubuntu-18-04-lts>
 
 <br />
 
@@ -121,6 +134,12 @@ ___
     sudo apt-get install sublime-text
 
 source: <https://www.ubuntuupdates.org/ppa/sublime>
+
+<br />
+
+### VIM
+
+    sudo apt install vim
 
 <br />
 
@@ -192,11 +211,11 @@ and paste the content of the [phpmyadmin.conf](phpmyadmin.conf)
 
 sources:
 
-<https://github.com/phpmyadmin/phpmyadmin/issues/15515#issuecomment-548521407>
+- <https://github.com/phpmyadmin/phpmyadmin/issues/15515#issuecomment-548521407>
 
-<https://websiteforstudents.com/install-phpmyadmin-latest-version-on-ubuntu-16-04-18-04-with-apache2-mariadb-and-php-7-2/>
+- <https://websiteforstudents.com/install-phpmyadmin-latest-version-on-ubuntu-16-04-18-04-with-apache2-mariadb-and-php-7-2/>
 
-<https://computingforgeeks.com/how-to-install-lamp-stack-on-ubuntu/>
+- <https://computingforgeeks.com/how-to-install-lamp-stack-on-ubuntu/>
 
 <br />
 
@@ -228,11 +247,15 @@ source: <https://www.how2shout.com/how-to/how-to-install-node-js-on-ubuntu-19-04
 
 #### As a Snap
 
+Install [Snap](#snap) if not installed
+
     sudo apt install snapd
 
     sudo apt install postman
 
 #### Or Via Flatpak
+
+Install [Flatpak](#flatpak) if not installed
 
     sudo apt install flatpak
 
@@ -302,6 +325,82 @@ source: <https://www.wikihow.com/Install-Steam-on-Linux>
 
 ### Vulkan
 
-    apt install libvulkan1 mesa-vulkan-drivers vulkan-utils
+    sudo apt install libvulkan1 mesa-vulkan-drivers vulkan-utils
 
 source: <https://linuxconfig.org/install-and-test-vulkan-on-linux>
+
+<br />
+
+## Other Packages and Applications
+
+### Spotify
+
+    sudo apt install spotify
+
+<br />
+
+### VLC Media Player
+
+    sudo apt install ubuntu-restricted-extras
+
+    sudo apt install vlc
+
+<br />
+
+### QBittorrent
+
+    sudo apt install qbittorrent
+
+<br />
+
+### GIMP
+
+    sudo apt install gimp
+
+<br />
+
+### Krita
+
+    sudo apt install krita
+
+<br />
+
+### Inkscape
+
+    sudo apt install inkscape
+
+<br />
+
+### Telegram
+
+    sudo apt install telegram-desktop
+
+<br />
+
+### Snap
+
+    sudo apt install snapd
+
+<br />
+
+### Flatpak
+
+    sudo add-apt-repository ppa:alexlarsson/flatpak
+    
+    sudo apt update 
+    
+    sudo apt install flatpak
+
+    sudo apt install gnome-software-plugin-flatpak
+
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+<br />
+
+### Simplenote
+
+    wget https://github.com/Automattic/simplenote-electron/releases/download/v1.16.0/Simplenote-linux-1.16.0-amd64.deb
+
+    sudo dpkg -i Simplenote-linux-.....deb
+
+<br />

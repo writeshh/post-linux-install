@@ -82,24 +82,24 @@ Add current user to the input group.
     sudo gpasswd -a $USER input
 Then log out and log back in (This is important). Then,
 
-    sudo apt-get install libinput-tools  
+    sudo apt install libinput-tools
 
-    sudo apt-get install xdotool  
+    sudo apt install xdotool
 
 If Ruby isn't installed :
 
-    sudo apt install ruby  
+    sudo apt install ruby
 
 Now install fusuma
 
-    sudo gem install fusuma  
+    sudo gem install fusuma
 
 Go to your config folder in home directory.
 
     cd ~/.config
 Now create a folder named fusuma
 
-    mkdir fusuma  
+    mkdir fusuma
 
     cd fusuma
 In there create a file called config.yml
@@ -129,9 +129,9 @@ ___
 
     echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
-    sudo apt-get update
+    sudo apt update -y
 
-    sudo apt-get install sublime-text
+    sudo apt install sublime-text
 
 source: <https://www.ubuntuupdates.org/ppa/sublime>
 
@@ -147,14 +147,54 @@ source: <https://www.ubuntuupdates.org/ppa/sublime>
 
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 
-    sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+    sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/- [Introduction](#introduction)
 
+- [Introduction](#introduction)
+- [Tings To Do Post Linux Install](#tings-to-do-post-linux-install)
+  - [System Update/Upgrade](#system-updateupgrade)
+  - [Customizations](#customizations)
+    - [Gnome Tweak Tool](#gnome-tweak-tool)
+    - [OCS-Install (For gnome themes)](#ocs-install-for-gnome-themes)
+    - [Fusuma (multi-touch gestures)](#fusuma-multi-touch-gestures)
+  - [Dev Tools](#dev-tools)
+    - [Sublime](#sublime)
+    - [VIM](#vim)
+    - [VS Code](#vs-code)
+    - [LAMP Stack](#lamp-stack)
+      - [Maria DB](#maria-db)
+      - [Apache](#apache)
+      - [PHP](#php)
+      - [PHPMYADMIN](#phpmyadmin)
+    - [Node.js](#nodejs)
+    - [Composer](#composer)
+    - [Postman](#postman)
+      - [As a Snap](#as-a-snap)
+      - [Or Via Flatpak](#or-via-flatpak)
+  - [Browsers](#browsers)
+    - [firefox](#firefox)
+    - [Brave Browser](#brave-browser)
+    - [Google Chrome](#google-chrome)
+  - [Game Drivers](#game-drivers)
+    - [Steam](#steam)
+    - [Lutris](#lutris)
+    - [Vulkan](#vulkan)
+  - [Other Packages and Applications](#other-packages-and-applications)
+    - [Spotify](#spotify)
+    - [VLC Media Player](#vlc-media-player)
+    - [QBittorrent](#qbittorrent)
+    - [GIMP](#gimp)
+    - [Krita](#krita)
+    - [Inkscape](#inkscape)
+    - [Telegram](#telegram)
+    - [Snap](#snap)
+    - [Flatpak](#flatpak)
+    - [Simplenote](#simplenote)
 
-    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+    sudo sh -c 'echo "deb [arch=amd64] <https://packages.microsoft.com/repos/vscode> stable main" > /etc/apt/sources.list.d/vscode.list'
 
     sudo apt install apt-transport-https
 
-    sudo apt update
+    sudo apt update -y
 
     sudo apt install code
 
@@ -166,32 +206,39 @@ source: <https://www.ubuntuupdates.org/ppa/vscode>
 
 #### Maria DB
 
-        sudo apt install software-properties-common mariadb-server mariadb-client
+    sudo apt install software-properties-common mariadb-server mariadb-client
 
-        sudo mysql_secure_installation 
+    sudo mysql_secure_installation 
+
+Creating new user
+
+    CREATE USER 'ritesh'@'localhost' IDENTIFIED BY 'password';
+
+    GRANT ALL PRIVILEGES ON * . * TO 'ritesh'@'localhost';
+
+    FLUSH PRIVILEGES;
 
 <br />
 
 #### Apache
 
-        sudo apt install -y apache2 apache2-utils
-        
-        sudo systemctl reload apache2
+    sudo apt install -y apache2 apache2-utils
+    
+    sudo systemctl reload apache2
 
-        sudo systemctl enable apache2
+    sudo systemctl enable apache2
 
-        sudo systemctl is-enabled apache2
+    sudo systemctl is-enabled apache2
 
 <br />
 
 #### PHP
 
-        sudo apt install php libapache2-mod-php php-cli php-fpm php-json php-pdo php-mysql php-zip php-gd  php-mbstring php-curl php-xml php-pear php-bcmath
+    sudo apt install php libapache2-mod-php php-cli php-fpm php-json php-pdo php-mysql php-zip php-gd  php-mbstring php-curl php-xml php-pear php-bcmath
 
-        sudo a2enmod php7.3 
+    sudo a2enmod php7.4
 
-
-        echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/phpinfo.php
+    echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/phpinfo.php
 
 <br />
 
@@ -229,11 +276,14 @@ however some of the linux distro installs old version of node. To install the la
 
     sudo apt install curl
 
-    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -
 
     sudo apt install nodejs
 
-source: <https://www.how2shout.com/how-to/how-to-install-node-js-on-ubuntu-19-04.html>
+sources:
+
+- <https://www.how2shout.com/how-to/how-to-install-node-js-on-ubuntu-19-04.html>
+- <https://github.com/nodesource/distributions>
 
 <br />
 

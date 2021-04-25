@@ -69,7 +69,17 @@ ___
 
     sudo apt install libqt5svg5 qml-module-qtquick-controls
 
+Download latest package from <https://www.pling.com/p/1136805/> (files section) and install
+
     sudo dpkg -i /path/to/ocs-url*.deb
+
+Links for good themes
+
+- Flattery Icon Theme: <https://www.pling.com/s/Gnome/p/1332404>
+
+- Orchid GTK Theme: <https://www.pling.com/s/Gnome/p/1357889/>
+
+- Prof-Gnome Theme: <https://www.pling.com/s/Gnome/p/1334194/>
 
 Source: <https://www.pling.com/p/1136805/>
 
@@ -109,7 +119,7 @@ Now you can use your favourite text editor to enter the contents in this file.
 
     nano config.yml
 
-and paste the contents of [config.yml](config.yml)
+and paste the contents of [config.yml](config.yml) and add `fusuma` command to startup applications
 
 sources:
 
@@ -187,8 +197,6 @@ Creating new user
 
     sudo systemctl enable apache2
 
-    sudo systemctl is-enabled apache2
-
 <br />
 
 #### PHP
@@ -202,10 +210,6 @@ Creating new user
 <br />
 
 #### PHPMYADMIN
-
-    sudo add-apt-repository ppa:phpmyadmin/ppa
-
-    sudo apt update
 
     sudo apt install phpmyadmin
 
@@ -249,6 +253,16 @@ sources:
 ### Composer
 
     sudo apt install composer
+
+If latest composer is not installed:
+
+    curl -sS https://getcomposer.org/installer | php 
+    
+    sudo mv composer.phar /usr/local/bin/composer 
+    
+    chmod +x /usr/local/bin/composer 
+
+Source: <https://tecadmin.net/how-to-install-php-composer-on-ubuntu-20-04/>
 
 <br />
 
@@ -411,5 +425,21 @@ source: <https://linuxconfig.org/install-and-test-vulkan-on-linux>
     wget https://github.com/Automattic/simplenote-electron/releases/download/v1.16.0/Simplenote-linux-1.16.0-amd64.deb
 
     sudo dpkg -i Simplenote-linux-.....deb
+
+### CopyQ
+
+Download the latest release from <https://github.com/hluk/CopyQ/releases> and install the package.
+
+    wget https://github.com/hluk/CopyQ/releases/download/v4.1.0/copyq_4.1.0_Debian_10-1_amd64.deb
+
+    sudo dpkg -i copq_4.1.0......deb
+
+Once installed, add `copyq` command to startup applications and shortcut to access clipboard.
+
+    copyq
+
+    copyq menu
+
+Source: <https://hluk.github.io/CopyQ/>
 
 <br />

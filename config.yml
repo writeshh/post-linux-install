@@ -1,23 +1,23 @@
 swipe:
     3:
         left:
-        command: 'xdotool key Ctrl+Super+Left'
+            command: 'xdotool key alt+Left' # History right
         right:
-        command: 'xdotool key Ctrl+Super+Right'
+            command: 'xdotool key alt+Right' # History forward
         up:
-        command: 'xdotool key super+m'
+            command: 'xdotool key ctrl+t' # Open new tab
         down:
-        command: 'xdotool key super+m'
+            command: 'xdotool key ctrl+w' # Close tab
     4:
-        up:
-        command: 'xdotool key Ctrl+Super+Up'
-        down:
-        command: 'xdotool key Ctrl+Super+Down'
         left:
-        command: 'xdotool key alt+Shift+Tab'
+            command: 'xdotool key Ctrl+Super+Left'
         right:
-        command: 'xdotool key alt+Tab'
-        
+            command: 'xdotool key Ctrl+Super+Right' 
+        up:
+            command: 'xdotool key super+ctrl+down' # Workspace overview
+        down:
+            command: 'xdotool key super+ctrl+up' # Window overview
+
 pinch:
     in:
         command: 'xdotool key super+a'
